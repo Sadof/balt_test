@@ -1,0 +1,208 @@
+* {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 11px;
+}
+
+.left-menu-bar {
+    background: #374050;
+    width: 181px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.left-menu-bar-logo {
+    width: 79px;
+    height: 59px;
+    background: #ffffff;
+    border-radius: 0px 0px 20px 0px;
+    display: inline-block;
+}
+
+.left-menu-bar-header {
+    position: relative;
+}
+
+.left-menu-bar-header-text {
+    color: #ffffff;
+    width: 50px;
+    height: 33px;
+    display: inline-block;
+    position: absolute;
+    left: 90px;
+    top: 7px;
+}
+
+.left-menu-bar-list {
+    margin-left: 34px;
+    margin-top: 13px;
+    cursor: pointer;
+}
+
+.left-menu-bar-item {
+    font-size: 12px;
+    line-height: 11px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.main-section {
+    margin-left: 181px;
+    width: 631px;
+}
+
+.main-section-header {
+    margin-left: 16px;
+    margin-top: 25px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #ed1c24;
+    color: #ed1c24;
+    display: inline-block;
+}
+
+.main-section-products {
+    margin-top: 10px;
+}
+
+.main-section-products-header {
+    margin-left: 16px !important;
+    margin-bottom: 8px;
+}
+
+.main-section-products-header-item {
+    font-size: 9px;
+    line-height: 11px;
+    color: #6e6e6f;
+}
+
+.main-section-products-list {
+    border-top: 1px solid #c4c4c4;
+    border-bottom: 1px solid #c4c4c4;
+}
+
+.right-menu-bar {
+    width: 181px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+}
+
+.right-menu-bar-header {
+    color: #a6afb8;
+    margin-top: 25px;
+    margin-right: 31px;
+    margin-bottom: 40px;
+}
+
+.right-menu-bar-btn {
+    background: #0FC5FF;
+    border-radius: 6px;
+    padding: 10px 42px;
+    display: inline-block;
+    color: white;
+    user-select: none;
+    cursor: pointer;
+}
+
+.edit-product-modal {
+    width: 630px;
+    display: block;
+    position: absolute;
+    top: 200px;
+    right: 0;
+    background: #374050;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+.edit-product-modal-inner {
+    position: relative;
+    padding: 12px;
+}
+
+.edit-product-modal-inner .edit-product-modal-header {
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.edit-product-modal-inner .edit-product-modal-label {
+    font-size: 9px;
+    margin-bottom: 5px;
+    color: #FFFFFF;
+}
+
+.edit-product-modal-inner .edit-product-modal-input {
+    background: #FFFFFF;
+    border-radius: 5px;
+    width: 472px;
+    height: 30px;
+    border: 0;
+    margin-bottom: 13px;
+}
+
+.edit-product-modal-inner .edit-product-modal-attr {
+    font-size: 14px;
+    margin-bottom: 18px;
+    color: white;
+}
+
+.edit-product-modal-inner .edit-product-modal-add {
+    font-size: 9px;
+    color: #0FC5FF;
+    border-bottom: 1px dotted #5FC6F1;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.edit-product-modal-cancel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #6e6e6f;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.edit-product-modal-attr-row {
+    margin-top: 5px;
+    display: flex;
+}
+
+.edit-product-modal-attr-row .edit-product-modal-input {
+    width: 220px;
+    margin-right: 11px;
+}
+
+.edit-product-modal-attr-row .fa-trash {
+    color: white;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+    margin: 0 !important;
+}
+
+.errorInput {
+    border: 1px solid red !important;
+}
+
+#addProduct {
+    margin-top: 20px;
+}
+
+#addAttr {
+    margin-bottom: 10px;
+}
+
+.modal-errors li {
+    color: red;
+    margin-bottom: 3px;
+}
