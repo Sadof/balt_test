@@ -24,3 +24,10 @@ services:
       - ./apache/default.conf:/etc/apache2/sites-enabled/000-default.conf
     depends_on:
       - database
+  redis:
+    image: redis:alpine
+    container_name: myapp-redis
+    volumes:
+    - ./data/redis:/data
+    ports:
+      - "6379:6379"

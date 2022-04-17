@@ -13,64 +13,31 @@ return [
     |
     */
 
-    'default' => env('QUEUE_CONNECTION', 'sync'),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Queue Connections
-    |--------------------------------------------------------------------------
-    |
-    | Here you may configure the connection information for each server that
-    | is used by your application. A default configuration has been added
-    | for each back-end shipped with Laravel. You are free to add more.
-    |
-    | Drivers: "sync", "database", "beanstalkd", "sqs", "redis", "null"
-    |
-    */
-
-    'connections' => [
-
-        'sync' => [
-            'driver' => 'sync',
-        ],
-
-        'database' => [
-            'driver' => 'database',
-            'table' => 'jobs',
-            'queue' => 'default',
-            'retry_after' => 90,
-            'after_commit' => false,
-        ],
-
-        'beanstalkd' => [
-            'driver' => 'beanstalkd',
-            'host' => 'localhost',
-            'queue' => 'default',
-            'retry_after' => 90,
-            'block_for' => 0,
-            'after_commit' => false,
-        ],
-
-        'sqs' => [
-            'driver' => 'sqs',
-            'key' => env('AWS_ACCESS_KEY_ID'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            'prefix' => env('SQS_PREFIX', 'https://sqs.us-east-1.amazonaws.com/your-account-id'),
-            'queue' => env('SQS_QUEUE', 'default'),
-            'suffix' => env('SQS_SUFFIX'),
-            'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
-            'after_commit' => false,
-        ],
-
-        'redis' => [
+    'default' => env('QUEUE_CONNECTION', 'job'),
+  //this is a misnomer, it should actually be named `stores` as it is in the cache config in `config/cache.php`
+  'connections' => [
+        //this is the 'job' queue connection
+        'job' => [
+            //uses the redis driver from config/database.php
             'driver' => 'redis',
-            'connection' => 'default',
-            'queue' => env('REDIS_QUEUE', 'default'),
+            //uses the 'queue' connection from the redis driver in config/database.php
+            'connection' => 'queue',
+            //this is the redis queue key default prefix that is applied when using this 'job' connection. It can be overriden by explicitly passing the queue name.
+            'queue' => '{job}',
             'retry_after' => 90,
             'block_for' => null,
-            'after_commit' => false,
         ],
-
+        //this is the 'app' queue connection
+        'app' => [
+            //uses the redis driver from config/database.php
+            'driver' => 'redis',
+            //uses the 'queue' connection from the redis driver in config/database.php
+            'connection' => 'queue',
+            //this is the redis queue key default prefix that is applied when using this 'app' connection.It can be overriden by explicitly passing the queue name.
+            'queue' => '{app}',
+            'retry_after' => 90,
+            'block_for' => null,
+        ],
     ],
 
     /*
