@@ -111,10 +111,9 @@ window.addEventListener('DOMContentLoaded', () => {
                     body: JSON.stringify(form_data)
                 });
                 const data = await response.json();
-
                 if (response.status == 422) {
-                    if (data && data.errors) {
-                        for (const [key, value] of Object.entries(data.errors)) {
+                    if (data) {
+                        for (const [key, value] of Object.entries(data)) {
                             errors.push(value);
                         }
                         showErrors(errors);

@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class EditProductRequest extends FormRequest
 {
@@ -39,5 +41,9 @@ class EditProductRequest extends FormRequest
            "ARTICLE.unique" => "Продукт с таким артикулем уже существует",
            "ARTICLE.regex" => "Артикул должен содержать только латинские символы и цифры",
         ];
+    }
+
+    protected function failedValidation(Validator $validator) {
+        throw new HttpResponseException(response()->json($validator->errors(), 422));
     }
 }
