@@ -31,7 +31,6 @@ class StoreProductRequest extends FormRequest
             "ARTICLE" => ["required", "regex:/^[A-Za-z0-9]+$/", "unique:products"],
             "AVAILABLE" => ["required", "in:available,unavailable"],
             "ATTRS" => ["nullable"],
-            "id" => ["nullable"],
         ];
     }
 
